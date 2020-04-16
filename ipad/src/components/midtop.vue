@@ -225,7 +225,8 @@
 				this.passworddialog = false;
 	        	this.$toast.error('网络异常');
 			})
-    		this.axios.post('https://www.goldneighbor.cn/phone/Drop/do_edit', {data:JSON.stringify(data[0])},{
+    		this.axios.post('https://www.goldneighbor.cn/phone/Drop/do_edit', {data:JSON.stringify(data[0]),u_id:localStorage.getItem('id')},{
+    		// this.axios.post('https://tpapi.yuanshixiong.cn/phone/Drop/do_edit', {data:JSON.stringify(data[0]),u_id:localStorage.getItem('id')},{
 	          cancelToken: new this.axios.CancelToken((c)=> {
 	            this.source = c;
 	          })
@@ -257,7 +258,9 @@
     		this.updatashow = true;
     		let that = this;
 			this.axios.post('https://www.goldneighbor.cn/phone/Drop/h_index', {u_id:localStorage.getItem('id')},{
-	          cancelToken: new this.axios.CancelToken((c)=> {
+			// this.axios.post('https://tpapi.yuanshixiong.cn/phone/Drop/h_index', {u_id:localStorage.getItem('id')},{
+ 
+			  cancelToken: new this.axios.CancelToken((c)=> {
 	            this.source = c;
 	          })
 	       	}).then((res) => {
